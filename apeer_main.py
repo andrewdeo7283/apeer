@@ -2,6 +2,16 @@
 ### aPEER Analysis ###
 ######################
 
+# Updated By: Andrew D
+# Date: Oct 28, 2024
+
+#The basic steps to the aPEER algorithm are:
+#1. Pollution and chronic disease prevalence rates are loaded - this information is calculated at the county level (assigned to county FIPS codes)
+#2. Pairs of county-level pollution measures are then clustered using normalization, PCA, and K-means clustering, resulting in clusters of counties
+#3. Groups of counties with high rates of chronic disease prevalence are identified
+#4. The groups of pollution counties in #2 are then compared to the groups of counties with high disease prevalence in #3 using the Jaccard Correlation Coefficient (J)
+#5. The highest pollution-disease associations are identified by the pairs with the highest J values
+
 import warnings
 from sklearn.exceptions import ConvergenceWarning
 warnings.simplefilter(action='ignore', category=FutureWarning)
